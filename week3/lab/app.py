@@ -68,8 +68,8 @@ def course_details(lines, id):
   list_data=[]
   for line in lines:
     data=line.split(',')
-    if data[1]==id:
-      list_data.append(data[2])
+    if data[1].strip()==id:
+      list_data.append(data[2].strip())
   fig, axe = plt.subplots(dpi=800)
   plt.xlabel("Marks")
   plt.ylabel("Frequency")
@@ -78,9 +78,11 @@ def course_details(lines, id):
   plt.close(fig)
   html_data = """<!DOCTYPE html>
   <head><title>Course Data</title>
+  <style>
   table, th, td {
   border: 1px solid black;
   }
+  </style>
   </head>
   <body>
     <h1>Course Details</h1>
@@ -94,7 +96,7 @@ def course_details(lines, id):
         <td>{{ max }}</td>
       </tr>
     </table>
-    <img src="img.png">
+    <img src="img.png" height="20%" width="20%">
   </body></html>"""
  
   template=Template(html_data)
