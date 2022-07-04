@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+    </title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+    <body>
+        <div class="container">
+                <div class = "jumbotron">
+                    <h1 class = "display-4">{{ username }}'s Articles</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        {% for article in articles %}
+                        <div>
+                            <h2>{{ article["title"] }}</h2>
+                            <p>Written By 
+                                {% for author in article["authors"] %}
+                                <a href = '/articles_by/{{ author["username"] }}'>{{ author["username"] }}</a>
+                                {% if not loop.last %}
+                                ,
+                                {% endif %}
+                                {% endfor %}
+                            </p>
+                            <div>
+                                {{ article["content"] }}
+                            </div>
+                        </div>
+                        <br>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-4">
+                        <h3>SIDEBAR</h3>
+                        <a href="/">HOME</a>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>
+</html>
