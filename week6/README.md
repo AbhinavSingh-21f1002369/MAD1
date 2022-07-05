@@ -5,3 +5,7 @@
 > OpenAPI Tools = https://openapi.tools/
 
 > Insomnia offline tool - https://insomnia.rest/
+
+> Flask RestPlus - https://flask-restplus.readthedocs.io/en/stable/
+
+> Flask Restful - https://flask-restful.readthedocs.io/en/latest/
